@@ -1,0 +1,12 @@
+<div>Todo List</div>
+<div>
+  <input type="text" [(ngModel)]="text"  placeholder="please input your task"/>
+  <button (click)="onAdd(text)">Add</button>
+</div>
+<ul>
+  <li *ngFor="let task of list">
+    <span>{{ task.content }}</span>
+    <input type="checkbox" [(ngModel)]="task.state" (change)="onChange(task)">
+    <button type="button" (click)="onRemove(task)">remove</button>
+  </li>
+</ul>
