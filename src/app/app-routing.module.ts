@@ -1,7 +1,7 @@
 /*
  * @Author: Carlos
  * @Date: 2023-07-29 17:29:05
- * @LastEditTime: 2023-07-29 17:53:30
+ * @LastEditTime: 2023-07-31 00:12:15
  * @FilePath: /ng-test/src/app/app-routing.module.ts
  * @Description: null
  */
@@ -21,6 +21,11 @@ const routes: Routes = [
       import('./pages/todo-list/todo-list.module').then(
         (m) => m.TodoListModule
       ),
+  },
+  {
+    path: 'slot',
+    loadChildren: () =>
+      import('./pages/slot/slot.module').then((m) => m.SlotModule),
   },
 ];
 

@@ -1,0 +1,57 @@
+<h2 class="font-bold text-xl">Angular and Content Projection</h2>
+
+<app-zippy-basic>
+  <p>
+    Is content projection cool?
+    <span class="text-orange-500">[default slot]</span>
+  </p>
+</app-zippy-basic>
+
+<hr class="bg-red-400 h-4" />
+
+<app-zippy-multislot>
+  <p question>
+    Is content projection cool?
+    <span class="text-orange-500">[named selector slot]</span>
+  </p>
+  <p>Let's learn about content projection!</p>
+</app-zippy-multislot>
+
+<hr class="bg-red-400 h-4" />
+
+<h2 class="font-bold text-xl">Here's a zippy</h2>
+
+<app-example-zippy>
+  <button
+    class="border rounded-xl py-2 px-8"
+    type="button"
+    appExampleZippyToggle
+  >
+    Is content project cool?
+  </button>
+  <ng-template appExampleZippyContent>
+    It depends on what you do with it.
+  </ng-template>
+</app-example-zippy>
+
+<hr class="bg-red-400 h-4" />
+
+<app-zippy-ngprojectas>
+  <p>Let's learn about content projection!</p>
+  <ng-container ngProjectAs="[question]">
+    <p>
+      one question selector fragment
+      <span class="text-orange-500">[named 1 slot]</span>
+    </p>
+  </ng-container>
+  <p question>
+    another question selector fragment!
+    <span class="text-orange-500">[named 2 slot]</span>
+  </p>
+</app-zippy-ngprojectas>
+
+<!--
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->
