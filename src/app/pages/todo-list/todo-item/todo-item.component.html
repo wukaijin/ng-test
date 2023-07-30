@@ -1,0 +1,20 @@
+<li class="flex w-[300px] items-center py-2">
+  <label
+    nz-checkbox
+    class="mr-2"
+    [(ngModel)]="task.state"
+    (ngModelChange)="onChange(task)"
+  ></label>
+  <span class="flex-1">{{ task.content }}</span>
+  <ng-content></ng-content>
+  <button
+    nz-button
+    nzType="primary"
+    nzDanger
+    nzShape="circle"
+    nzSize="small"
+    (click)="onRemove(task)"
+  >
+    <span nz-icon nzType="delete" nzTheme="outline"></span>
+  </button>
+</li>
