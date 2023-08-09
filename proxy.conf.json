@@ -1,0 +1,9 @@
+{
+  "/nest-api": {
+    "target": "https://www.wukaijin.com",
+    "secure": false,
+    "pathRewrite": {
+      "^/nest-api": "/nest-api"
+    }
+  }
+}

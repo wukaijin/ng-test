@@ -1,0 +1,12 @@
+<div class="book-item" *ngFor="let book of books">
+  <p class="font-bold">{{ book.text }}</p>
+  <section>{{ book.description }}</section>
+  <button
+    nz-button
+    nzType="primary"
+    (click)="add.emit(book.id)"
+    data-test="add-button"
+  >
+    Add to Collection
+  </button>
+</div>

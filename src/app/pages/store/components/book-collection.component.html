@@ -1,0 +1,12 @@
+<div class="book-item" *ngFor="let book of books">
+  <p class="font-bold">{{ book.text }}</p>
+  <section>{{ book.description }}</section>
+  <button
+    nz-button
+    nzType="primary"
+    (click)="remove.emit(book.id)"
+    data-test="remove-button"
+  >
+    Remove from Collection
+  </button>
+</div>

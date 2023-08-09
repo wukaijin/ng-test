@@ -44,7 +44,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
+              "buildOptimizer": true,
               "optimization": false,
               "vendorChunk": true,
               "extractLicenses": false,
@@ -56,12 +56,17 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "proxyConfig": "./proxy.conf.json"
+          },
           "configurations": {
             "production": {
               "browserTarget": "ng-test:build:production"
             },
             "development": {
-              "browserTarget": "ng-test:build:development"
+              "browserTarget": "ng-test:build:development",
+              "port": 4300,
+              "hmr": true
             }
           },
           "defaultConfiguration": "development"
@@ -85,5 +90,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
