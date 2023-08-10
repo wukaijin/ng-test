@@ -1,7 +1,7 @@
 /*
  * @Author: Carlos
  * @Date: 2023-07-29 17:29:05
- * @LastEditTime: 2023-08-10 15:39:39
+ * @LastEditTime: 2023-08-10 16:13:34
  * @FilePath: \ng-test\src\app\app-routing.module.ts
  * @Description: null
  */
@@ -17,6 +17,10 @@ import { Title } from '@angular/platform-browser';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/pages/rxjs' },
+  {
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
+  },
   {
     path: 'pages',
     loadChildren: () =>
