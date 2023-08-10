@@ -24,7 +24,7 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "less",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.less", "src/assets/output.css"],
+            "styles": ["src/assets/output.css", "src/styles.less"],
             "scripts": []
           },
           "configurations": {
