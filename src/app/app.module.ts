@@ -1,5 +1,12 @@
 /*
  * @Author: carlos
+ * @Date: 2023-08-10 10:41:23
+ * @LastEditTime: 2023-08-10 15:15:01
+ * @FilePath: \ng-test\src\app\app.module.ts
+ * @Description: null
+ */
+/*
+ * @Author: carlos
  * @Date: 2023-08-09 11:12:12
  * @LastEditTime: 2023-08-09 17:35:52
  * @FilePath: \ng-test\src\app\app.module.ts
@@ -20,9 +27,6 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IconsProviderModule } from './icons-provider.module';
-import { NzLayoutModule } from 'ng-zorro-antd/layout';
-import { NzMenuModule } from 'ng-zorro-antd/menu';
-import { NzButtonModule } from 'ng-zorro-antd/button';
 import storeRootModule from './store';
 import effectsRootModule from './effect';
 import { BooksService } from './service/book.service';
@@ -38,9 +42,6 @@ registerLocaleData(en);
     HttpClientModule,
     BrowserAnimationsModule,
     IconsProviderModule,
-    NzLayoutModule,
-    NzMenuModule,
-    NzButtonModule,
     storeRootModule,
     effectsRootModule,
   ],

@@ -1,51 +1,56 @@
 /*
  * @Author: Carlos
  * @Date: 2023-07-29 17:29:05
- * @LastEditTime: 2023-08-10 11:11:00
+ * @LastEditTime: 2023-08-10 15:39:39
  * @FilePath: \ng-test\src\app\app-routing.module.ts
  * @Description: null
  */
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Injectable, NgModule } from '@angular/core';
+import {
+  Routes,
+  RouterModule,
+  TitleStrategy,
+  RouterStateSnapshot,
+} from '@angular/router';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { Title } from '@angular/platform-browser';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: '/welcome' },
+  { path: '', pathMatch: 'full', redirectTo: '/pages/rxjs' },
   {
-    path: 'welcome',
+    path: 'pages',
     loadChildren: () =>
-      import('./pages/welcome/welcome.module').then((m) => m.WelcomeModule),
+      import('./pages/pages.module').then((m) => m.PagesModule),
   },
-  {
-    path: 'store',
-    loadChildren: () =>
-      import('./pages/store/store.module').then(
-        (m) => m.StoreModule
-      ),
-  },
-  {
-    path: 'rxjs',
-    loadChildren: () =>
-      import('./pages/rxjs/rxjs.module').then(
-        (m) => m.RxjsModule
-      ),
-  },
-  {
-    path: 'todo-list',
-    loadChildren: () =>
-      import('./pages/todo-list/todo-list.module').then(
-        (m) => m.TodoListModule
-      ),
-  },
-  {
-    path: 'slot',
-    loadChildren: () =>
-      import('./pages/slot/slot.module').then((m) => m.SlotModule),
-  },
+  { path: '**', component: NotFoundComponent },
 ];
+
+@Injectable()
+export class TemplatePageTitleStrategy extends TitleStrategy {
+  constructor(private readonly title: Title) {
+    super();
+  }
+
+  override updateTitle(routerState: RouterStateSnapshot) {
+    const title = this.buildTitle(routerState);
+    console.log('routerState: ', routerState);
+    if (title !== undefined) {
+      this.title.setTitle(` ${title} | My Application`);
+    } else {
+      this.title.setTitle(`My Application`);
+    }
+  }
+}
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
   declarations: [],
+  providers: [
+    {
+      provide: TitleStrategy,
+      useClass: TemplatePageTitleStrategy,
+    },
+  ],
 })
 export class AppRoutingModule {}
