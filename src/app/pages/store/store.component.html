@@ -2,7 +2,6 @@
   <div class="w-1/2">
     <h2 class="text-xl">Books</h2>
     <book-list
-      class="book-list"
       [books]="(books$ | async)!"
       (add)="onAdd($event)"
     ></book-list>
@@ -10,7 +9,6 @@
   <div class="w-1/2">
     <h2 class="text-xl">My Collection</h2>
     <book-collection
-      class="book-collection"
       [books]="(bookCollection$ | async)!"
       (remove)="onRemove($event)"
     >

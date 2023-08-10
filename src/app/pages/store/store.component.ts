@@ -1,7 +1,7 @@
 /*
  * @Author: carlos
  * @Date: 2023-08-09 11:41:59
- * @LastEditTime: 2023-08-09 15:03:18
+ * @LastEditTime: 2023-08-10 11:51:28
  * @FilePath: \ng-test\src\app\pages\store\store.component.ts
  * @Description: null
  */
@@ -22,16 +22,13 @@ export class StoreComponent implements OnInit {
   bookCollection$ = this.store.select(selectBookCollection);
   constructor(private store: Store, private bookService: BooksService) {}
   onAdd(bookId: string) {
-    console.log(bookId);
     this.store.dispatch(BooksActions.addBook({ bookId }));
   }
   onRemove(bookId: string) {
-    console.log(bookId);
-      this.store.dispatch(BooksActions.removeBook({ bookId }));
+    this.store.dispatch(BooksActions.removeBook({ bookId }));
   }
   ngOnInit(): void {
     this.bookService.getBooks().subscribe((books) => {
-      console.log(books);
       this.store.dispatch(BooksApiActions.retrievedBookList({ books }));
     });
   }

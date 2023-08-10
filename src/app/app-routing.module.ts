@@ -1,7 +1,7 @@
 /*
  * @Author: Carlos
  * @Date: 2023-07-29 17:29:05
- * @LastEditTime: 2023-08-09 11:45:52
+ * @LastEditTime: 2023-08-10 11:11:00
  * @FilePath: \ng-test\src\app\app-routing.module.ts
  * @Description: null
  */
@@ -20,6 +20,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./pages/store/store.module').then(
         (m) => m.StoreModule
+      ),
+  },
+  {
+    path: 'rxjs',
+    loadChildren: () =>
+      import('./pages/rxjs/rxjs.module').then(
+        (m) => m.RxjsModule
       ),
   },
   {
