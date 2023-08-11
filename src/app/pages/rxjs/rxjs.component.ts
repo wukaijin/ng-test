@@ -1,32 +1,33 @@
 /*
  * @Author: carlos
  * @Date: 2023-08-10 11:07:06
- * @LastEditTime: 2023-08-11 13:33:41
+ * @LastEditTime: 2023-08-11 13:56:36
  * @FilePath: \ng-test\src\app\pages\rxjs\rxjs.component.ts
  * @Description: null
  */
 import { Component, OnInit } from '@angular/core';
 import {
   fromEvent,
-  map,
   interval,
+  timer,
+  of,
+  forkJoin,
+  partition,
+  concat,
+  merge,
+  zip,
+} from 'rxjs';
+import {
+  map,
   take,
   exhaustAll,
   exhaustMap,
   concatMap,
-  concat,
   concatAll,
-  merge,
   mergeAll,
-  of,
-  timer,
-  forkJoin,
-  partition,
-  EMPTY,
-  zip,
   startWith,
   endWith,
-} from 'rxjs';
+} from 'rxjs/operators';
 
 @Component({
   selector: 'app-rxjs',

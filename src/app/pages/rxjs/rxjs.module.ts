@@ -11,9 +11,10 @@ import { RxjsComponent } from './rxjs.component';
 import { RxjsRoutingModule } from './rxjs-routing.module';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzSpaceModule } from 'ng-zorro-antd/space';
+import { DragBallComponent } from './drag-ball/drag-ball.component';
 
 @NgModule({
-  declarations: [RxjsComponent],
+  declarations: [RxjsComponent, DragBallComponent],
   imports: [CommonModule, RxjsRoutingModule, NzButtonModule, NzSpaceModule],
 })
 export class RxjsModule {}
