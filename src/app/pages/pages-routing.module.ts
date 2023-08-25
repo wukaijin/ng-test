@@ -1,7 +1,7 @@
 /*
  * @Author: Carlos
  * @Date: 2023-07-29 17:29:05
- * @LastEditTime: 2023-08-10 15:45:42
+ * @LastEditTime: 2023-08-24 17:08:57
  * @FilePath: \ng-test\src\app\pages\pages-routing.module.ts
  * @Description: null
  */
@@ -38,6 +38,12 @@ const routes: Routes = [
         path: 'slot',
         loadChildren: () =>
           import('./slot/slot.module').then((m) => m.SlotModule),
+      },
+
+      {
+        path: 'animate',
+        loadChildren: () =>
+          import('./animate/animate.module').then((m) => m.AnimateModule),
       },
       { path: '**', redirectTo: 'welcome' },
     ],

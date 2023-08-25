@@ -1,0 +1,11 @@
+<p [@appear]="state ? 'show' : 'hide'" class="w-[200px] h-[200px] inline-block">
+  translate.x works!
+</p>
+
+<p
+  [@appear]="state ? 'show' : 'hide'"
+  class="ml-4 w-[200px] h-[200px] inline-block"
+  *ngIf="state"
+>
+  translate.x works!
+</p>
